@@ -10,9 +10,9 @@ phases:
     commands:
       - echo "Running build..."
       - ls -l scripts/build.sh
-      - scripts/build.sh
+      - bash scripts/build.sh
   post_build:
     commands:
       - echo "Running post_build..."
       - ls -l scripts/post_build.sh
-      - scripts/post_build.sh
+      - bash scripts/post_build.sh
