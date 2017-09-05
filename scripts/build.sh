@@ -9,7 +9,7 @@
 #   REGIONS - space separated list of regions to deploy
 #
 
-set -e
+set -ex
 
 if [ -z "$BUCKET" ] || [ -z "$ENV" ] || [ -z "$REGIONS" ] || [ -z "$ACCOUNT" ]
 then
@@ -24,7 +24,7 @@ cp -r * ../dist
 
 timestamp=$(date)
 cd ../dist
-sed -i '' "s/TIMESTAMP/$timestamp" index.html
+sed -i '' "s/TIMESTAMP/$timestamp/" index.html
 
 
 for REGION in $REGIONS
