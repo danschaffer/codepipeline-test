@@ -3,6 +3,6 @@
 #
 # post build script
 
-set -e
+set -ex
 
 echo "post_build: doing nothing..."

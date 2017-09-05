@@ -24,8 +24,9 @@ cp -r * ../dist
 
 timestamp=$(date)
 cd ../dist
-sed -i "s/TIMESTAMP/$timestamp/" index.html > index.html.1
+sed "s/TIMESTAMP/$timestamp/" index.html > index.html.1
 mv -f index.html.1 index.html
+cat index.html
 
 
 for REGION in $REGIONS
