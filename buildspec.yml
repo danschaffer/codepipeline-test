@@ -7,7 +7,7 @@ phases:
       - pip install awscli
   pre_build:
     commands:
-      - echo "pre_build phase...
+      - echo "pre_build phase..."
       - yarn -v
       - node -v
   build:
