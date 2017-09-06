@@ -3,11 +3,13 @@ phases:
   install:
     commands:
       - echo "install phase..."
-      - yarn -v
-      - node -v
+      - apk -Uuv add groff less python py-pip
+      - pip install awscli
   pre_build:
     commands:
-      - echo "Nothing to do in pre_build phase..."
+      - echo "pre_build phase...
+      - yarn -v
+      - node -v
   build:
     commands:
       - echo "Running build..."
