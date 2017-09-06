@@ -2,7 +2,9 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Nothing to do in install phase..."
+      - echo "install phase..."
+      - yarn -v
+      - node -v
   pre_build:
     commands:
       - echo "Nothing to do in pre_build phase..."
