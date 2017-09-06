@@ -11,7 +11,7 @@
 
 set -ex
 
-if [ -z "$BUCKET" ] || [ -z "$ENV" ] || [ -z "$REGIONS" ] || [ -z "$ACCOUNT" ]
+if [ -z "$BUCKET" ] || [ -z "$ENV" ] || [ -z "$REGIONS" ] || [ -z "$ACCOUNT" ] || [ -z "$DISTID" ]
 then
     echo "All environment variables BUCKET, ENV, REGIONS must be set"
     exit 1
@@ -31,7 +31,12 @@ cat index.html
 
 for REGION in $REGIONS
 do
-    echo "deploying to $REGION"
+    echo "build: deploying to $REGION"
     export AWS_DEFAULT_REGION=$REGION
     aws s3 sync . s3://${BUCKET}-${ENV}-${ACCOUNT}-${REGION}
 done
+
+echo "build: invalidate cloudformation cache"
+echo aws cloudfront create-invalidation --distribution-id $DISTID --paths /*
+
+echo "build: done"

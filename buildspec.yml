@@ -2,10 +2,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Nothing to do in install phase...
+      - echo "Nothing to do in install phase..."
   pre_build:
     commands:
-      - echo Nothing to do in pre_build phase...
+      - echo "Nothing to do in pre_build phase..."
   build:
     commands:
       - echo "Running build..."
@@ -13,6 +13,4 @@ phases:
       - bash scripts/build.sh
   post_build:
     commands:
-      - echo "Running post_build..."
-      - ls -l scripts/post_build.sh
-      - bash scripts/post_build.sh
+      - echo "Nothing to do in post_build phase..."
